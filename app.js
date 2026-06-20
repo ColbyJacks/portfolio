@@ -321,7 +321,7 @@ if (btnSpeak && ttsInput && ttsWave && waveStatus) {
         if (text === "") return;
         
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.volume = 0.75; // Set volume to 75%
+        utterance.volume = 0.50; // Set volume to 75%
         
         utterance.onstart = () => {
             isSpeaking = true;
