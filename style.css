@@ -34,12 +34,24 @@ html {
     scroll-behavior: smooth;
 }
 
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4; /* Faint and ambient */
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-global);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
 }
 
 .container {

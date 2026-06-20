@@ -176,3 +176,99 @@ filterButtons.forEach(button => {
 document.addEventListener("DOMContentLoaded", () => {
     renderProjects(projects);
 });
+
+// Full-Page Interactive Particle Canvas
+const canvas = document.getElementById("bg-canvas");
+if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 1.5 + 0.5;
+            this.speedX = Math.random() * 0.4 - 0.2;
+            this.speedY = Math.random() * 0.4 - 0.2;
+            this.opacity = Math.random() * 0.4 + 0.15;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+        draw() {
+            ctx.fillStyle = `rgba(0, 242, 254, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    
+    function init() {
+        particles = [];
+        const count = Math.min(Math.floor((canvas.width * canvas.height) / 18000), 100);
+        for (let i = 0; i < count; i++) {
+            particles.push(new Particle());
+        }
+    }
+    init();
+    
+    window.addEventListener("resize", init);
+    
+    // Mouse hover trackers in viewport space
+    let mouse = { x: null, y: null };
+    window.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+    window.addEventListener("mouseleave", () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+            
+            // Faint connections between nearby dots
+            particles.forEach(p2 => {
+                const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                if (dist < 90) {
+                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.08 * (1 - dist/90)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            });
+            
+            // Mouse connection lines
+            if (mouse.x !== null && mouse.y !== null) {
+                const distToMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+                if (distToMouse < 140) {
+                    const force = (140 - distToMouse) / 140;
+                    ctx.strokeStyle = `rgba(0, 242, 254, ${0.12 * force})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                }
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
