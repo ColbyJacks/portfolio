@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colby Christy | Computer Science Student & Developer Portfolio</title>
-    <meta name="description" content="Portfolio of Colby Christy, Computer Science student at UTSA, showcasing full-stack web, IoT, and game development projects.">
+    <title>Colby Christy | Software Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Colby Christy, Computer Science student at UTSA, specializing in backend automation, computer vision utilities, and voice synthesis technology.">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Style Sheets -->
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for Icons -->
@@ -14,16 +14,23 @@
 </head>
 <body>
 
+    <!-- Ambient Glowing Orbs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
     <!-- Header / Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Colby Christy</a>
+            <a href="#" class="nav-logo">
+                <span class="mono-logo">&lt;CC /&gt;</span>
+            </a>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#featured" class="nav-link">Featured</a></li>
-                <li><a href="#projects" class="nav-link">Directory</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link"><span class="nav-number">01.</span>About</a></li>
+                <li><a href="#skills" class="nav-link"><span class="nav-number">02.</span>Skills</a></li>
+                <li><a href="#experience" class="nav-link"><span class="nav-number">03.</span>Experience</a></li>
+                <li><a href="#projects" class="nav-link"><span class="nav-number">04.</span>Projects</a></li>
+                <li><a href="#contact" class="nav-link"><span class="nav-number">05.</span>Contact</a></li>
+                <li><a href="Colby_Christy_Resume.pdf" class="btn btn-nav-cta" download><i class="fa-solid fa-download"></i> Resume</a></li>
             </ul>
             <div class="nav-toggle" id="nav-toggle">
                 <i class="fa-solid fa-bars"></i>
@@ -33,17 +40,17 @@
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
-        <div class="hero-glow"></div>
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-container">
             <div class="hero-content">
-                <span class="hero-subtitle">UTSA Computer Science Student</span>
-                <h1 class="hero-title">Building Software for the <span class="gradient-text">Next Generation</span></h1>
+                <div class="hero-tagline mono-text"><span class="accent-text">const</span> engineer = "Colby Christy";</div>
+                <h1 class="hero-title">Building scalable systems and <span class="gradient-text">intelligent infrastructure</span>.</h1>
                 <p class="hero-description">
-                    Highly motivated developer specializing in backend automation pipelines, computer vision utilities, and voice synthesis technology. Check out my portfolio of 8 completed projects below.
+                    Computer Science student at UTSA specializing in backend automation, computer vision pipelines, and voice synthesis integrations. Focused on writing clean, high-performance code.
                 </p>
                 <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">Explore My Projects</a>
-                    <a href="Colby_Christy_Resume.pdf" class="btn btn-secondary" download><i class="fa-solid fa-download"></i> Download Resume</a>
+                    <a href="#projects" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://github.com/ColbyJacks" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
                 <div class="hero-socials">
                     <a href="https://github.com/ColbyJacks" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -57,236 +64,305 @@
     <!-- About Section -->
     <section class="about-section" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title"><span class="section-number">01.</span> About Me</h2>
             <div class="about-grid">
                 <div class="about-info">
-                    <h3>Education & Background</h3>
                     <p>
-                        I am currently pursuing my <strong>Bachelor of Science in Computer Science</strong> at the <strong>University of Texas at San Antonio (UTSA)</strong>, expected to graduate in Spring 2027. I previously earned my Associate of Science in Computer Science from Northwest Vista College.
+                        I am a **Computer Science** major at the **University of Texas at San Antonio (UTSA)**, graduating in Spring 2027. I previously completed my Associate of Science in Computer Science at Northwest Vista College.
                     </p>
                     <p>
-                        My passion lies in bridging the gap between software and hardware, creating highly efficient automations, and building web architectures. In addition to coding, I serve as an officer in the UTSA ACM chapter and active esports team competitor.
+                        My work revolves around solving backend architectural bottlenecks and building clean, localized integrations. I enjoy bridging code and execution—developing automated log monitors, audio download scripts, virtual cameras, and localized LLM wrappers.
+                    </p>
+                    <p>
+                        Beyond my studies, I active participate in the tech community as an officer for **ACM at UTSA**, collaborating on coding workshops and hosting local developer events.
                     </p>
                 </div>
-                <div class="about-timeline">
-                    <h3>Experience Timeline</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <span class="timeline-date">Apr 2026 - Present</span>
-                            <h4>Caregiver</h4>
-                            <p class="timeline-company">Legacy Home Health Care</p>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-date">Feb 2025 - Present</span>
-                            <h4>Officer</h4>
-                            <p class="timeline-company">ACM at UTSA</p>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-date">Aug 2022 - Mar 2026</span>
-                            <h4>Caregiver</h4>
-                            <p class="timeline-company">American Medical</p>
-                        </div>
+                <div class="about-stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label mono-text">01 / GRADUATION</span>
+                        <h4 class="stat-value">Spring 2027</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label mono-text">02 / EDUCATION</span>
+                        <h4 class="stat-value">UTSA BS CS</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label mono-text">03 / CORE FOCUS</span>
+                        <h4 class="stat-value">Systems & AI</h4>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label mono-text">04 / LOCATION</span>
+                        <h4 class="stat-value">San Antonio, TX</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Bento Section -->
     <section class="skills-section" id="skills">
         <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skills-card">
-                    <i class="fa-solid fa-code skills-icon"></i>
+            <h2 class="section-title"><span class="section-number">02.</span> Skills Matrix</h2>
+            <div class="bento-grid">
+                <!-- Card 1: Languages -->
+                <div class="bento-card col-span-2">
+                    <div class="bento-glow"></div>
+                    <i class="fa-solid fa-terminal bento-icon"></i>
                     <h3>Languages</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">Kotlin</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Lua</span>
+                    <p class="bento-desc">Core languages used for scripting, systems programming, and database logic.</p>
+                    <div class="skills-flex">
+                        <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-pill"><i class="fa-brands fa-java"></i> Java</span>
+                        <span class="skill-pill">Kotlin</span>
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="skill-pill">Lua</span>
+                        <span class="skill-pill">Bash</span>
                     </div>
                 </div>
-                <div class="skills-card">
-                    <i class="fa-solid fa-layer-group skills-icon"></i>
-                    <h3>Frameworks</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">Prisma ORM</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Pygame</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">OpenCV</span>
+                <!-- Card 2: AI & Vision -->
+                <div class="bento-card">
+                    <div class="bento-glow"></div>
+                    <i class="fa-solid fa-brain bento-icon"></i>
+                    <h3>AI & Vision</h3>
+                    <p class="bento-desc">Local LLM serving, speech-to-text integration, and real-time frame tracking.</p>
+                    <div class="skills-flex">
+                        <span class="skill-pill">Ollama</span>
+                        <span class="skill-pill">OpenCV</span>
+                        <span class="skill-pill">Gemini API</span>
+                        <span class="skill-pill">TTS APIs</span>
                     </div>
                 </div>
-                <div class="skills-card">
-                    <i class="fa-solid fa-screwdriver-wrench skills-icon"></i>
-                    <h3>Developer Tools</h3>
-                    <div class="skills-list">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub CLI</span>
-                        <span class="skill-tag">Ollama (LLM)</span>
-                        <span class="skill-tag">RCON</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">SQLite</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">VS Code</span>
+                <!-- Card 3: Frameworks & DB -->
+                <div class="bento-card">
+                    <div class="bento-glow"></div>
+                    <i class="fa-solid fa-layer-group bento-icon"></i>
+                    <h3>Frameworks & ORM</h3>
+                    <p class="bento-desc">Toolkits for backend REST routers and collections persistence layers.</p>
+                    <div class="skills-flex">
+                        <span class="skill-pill">Flask</span>
+                        <span class="skill-pill">Next.js</span>
+                        <span class="skill-pill">React</span>
+                        <span class="skill-pill">Prisma ORM</span>
+                        <span class="skill-pill">Pygame</span>
+                    </div>
+                </div>
+                <!-- Card 4: Tools & Deploy -->
+                <div class="bento-card col-span-2">
+                    <div class="bento-glow"></div>
+                    <i class="fa-solid fa-gears bento-icon"></i>
+                    <h3>Infrastructure & Tooling</h3>
+                    <p class="bento-desc">Containerization, source management, and domain routing setups.</p>
+                    <div class="skills-flex">
+                        <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="skill-pill"><i class="fa-brands fa-docker"></i> Docker</span>
+                        <span class="skill-pill">GitHub CLI</span>
+                        <span class="skill-pill">Cloudflare DNS</span>
+                        <span class="skill-pill">RCON Sockets</span>
+                        <span class="skill-pill">Linux Systems</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section class="featured-section" id="featured">
+    <!-- Experience Timeline -->
+    <section class="experience-section" id="experience">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="featured-grid">
-                <!-- Project 1 -->
-                <div class="featured-card">
-                    <div class="featured-card-content">
-                        <span class="project-category">AI Automation / Backend</span>
-                        <h3>Minecraft AI & Server Idler</h3>
-                        <p>
-                            A zero-player socket listener that wakes up a Minecraft server on player connection attempts. Features an RCON idle monitor and a Gemini-2.5-Flash assistant scanning logs and responding to chat commands.
-                        </p>
-                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Gemini API</span>
-                            <span class="tag">RCON</span>
-                            <span class="tag">Sockets</span>
+            <h2 class="section-title"><span class="section-number">03.</span> Experience</h2>
+            <div class="timeline-container">
+                <!-- Item 1 -->
+                <div class="timeline-block">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date mono-text">Apr 2026 - Present</span>
+                            <h3>Caregiver</h3>
+                            <h4 class="company-name text-emerald">Legacy Home Health Care</h4>
                         </div>
-                        <a href="https://github.com/ColbyJacks/minecraft-Server-Idler" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="timeline-desc">
+                            Provide specialized caregiver services and local client logistics support. Implemented local custom scripts to automate work logs, shift timings, and reporting files.
+                        </p>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="featured-card">
-                    <div class="featured-card-content">
-                        <span class="project-category">Voice Synthesis / React UI</span>
-                        <h3>Clone-TTS Voice Synthesis</h3>
-                        <p>
-                            An open-source frontend and backend voice cloning and text-to-speech rendering application wrapper featuring responsive UI controllers.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">TTS API</span>
-                            <span class="tag">AI Voice</span>
+                <!-- Item 2 -->
+                <div class="timeline-block">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date mono-text">Feb 2025 - Present</span>
+                            <h3>Officer</h3>
+                            <h4 class="company-name text-purple">ACM at UTSA</h4>
                         </div>
-                        <a href="https://github.com/ColbyJacks/Clone-TTS" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="timeline-desc">
+                            Co-manage local student operations for the Association for Computing Machinery chapter. Coordinate development projects, organize student panels, and support tech community workshops.
+                        </p>
                     </div>
                 </div>
-                <!-- Project 3 -->
-                <div class="featured-card">
-                    <div class="featured-card-content">
-                        <span class="project-category">Automation / Media Utilities</span>
-                        <h3>YouTube to Media Downloader</h3>
-                        <p>
-                            A lightweight media downloader script that takes YouTube URLs, downloads video streams, and converts audio files locally.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Media API</span>
-                            <span class="tag">Automation</span>
+                <!-- Item 3 -->
+                <div class="timeline-block">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date mono-text">Aug 2022 - Mar 2026</span>
+                            <h3>Caregiver</h3>
+                            <h4 class="company-name text-emerald">American Medical</h4>
                         </div>
-                        <a href="https://github.com/ColbyJacks/Youtube-to-Media" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="timeline-desc">
+                            Maintained daily health regimens, personal logistics pipelines, and patient records tracking for clients.
+                        </p>
                     </div>
                 </div>
-                <!-- Project 4 -->
-                <div class="featured-card">
-                    <div class="featured-card-content">
-                        <span class="project-category">OS Integration / Video Stream</span>
-                        <h3>virtualCamera</h3>
-                        <p>
-                            Virtual camera feed controller that hijacks video devices to output customized, dynamic image sequences using local streams.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Virtual Webcam</span>
-                            <span class="tag">OS Hijack</span>
+                <!-- Item 4 -->
+                <div class="timeline-block">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date mono-text">Amazon Beta Program</span>
+                            <h3>Warehouse Associate & WHS Ambassador</h3>
+                            <h4 class="company-name text-cyan">Amazon Logistics (San Antonio, TX)</h4>
                         </div>
-                        <a href="https://github.com/ColbyJacks/virtualCamera" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-right"></i></a>
+                        <p class="timeline-desc">
+                            Operated Powered Industrial Trucks (PIT) for high-rate inventory management. Served as Ambassador in the local safety beta program, compiling performance reports and auditing fulfillment compliance.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Complete Project Directory -->
+    <!-- Projects Section -->
     <section class="projects-section" id="projects">
         <div class="container">
-            <h2 class="section-title">All Projects Directory</h2>
-            <p class="section-desc">Search and filter through the complete archive of my 8 programming projects.</p>
+            <h2 class="section-title"><span class="section-number">04.</span> Featured Work</h2>
             
-            <div class="directory-controls">
-                <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="project-search" placeholder="Search projects by name, tags, or description...">
+            <!-- Featured Alternating Layout -->
+            <div class="featured-projects-list">
+                <!-- Project 1 -->
+                <div class="featured-project-item">
+                    <div class="project-details-panel">
+                        <span class="mono-text project-label">01 / FEATURED SYSTEM</span>
+                        <h3>minecraft-Server-Idler</h3>
+                        <div class="project-description-box">
+                            <p>
+                                An automated socket listener on port 25565 that dynamically spins up a local Minecraft server upon player connection attempts. Integrates an RCON idle scanner to stop the process when empty, and maps terminal logs to a Gemini-2.5-Flash assistant context.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list mono-text">
+                            <li>Python</li>
+                            <li>Sockets</li>
+                            <li>RCON</li>
+                            <li>Gemini API</li>
+                        </ul>
+                        <div class="project-actions-links">
+                            <a href="https://github.com/ColbyJacks/minecraft-Server-Idler" target="_blank" title="View Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="python">Python</button>
-                    <button class="filter-btn" data-filter="web">Web / React</button>
+
+                <!-- Project 2 -->
+                <div class="featured-project-item reverse">
+                    <div class="project-details-panel">
+                        <span class="mono-text project-label">02 / SPEECH SYNTHESIS</span>
+                        <h3>Clone-TTS Voice Synthesis</h3>
+                        <div class="project-description-box">
+                            <p>
+                                A voice cloning wrapper that integrates text-to-speech engine APIs with a local backend system. Supports custom voice model parameters and features a clean, responsive React frontend.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list mono-text">
+                            <li>React</li>
+                            <li>Python</li>
+                            <li>TTS API</li>
+                            <li>AI Voice</li>
+                        </ul>
+                        <div class="project-actions-links">
+                            <a href="https://github.com/ColbyJacks/Clone-TTS" target="_blank" title="View Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="projects-grid" id="projects-directory">
-                <!-- Dynamically loaded by app.js -->
-            </div>
-            
-            <div class="no-results" id="no-results">
-                <i class="fa-regular fa-folder-open"></i>
-                <p>No projects found matching your search or filter criteria.</p>
+            <!-- Complete Project Archive Directory -->
+            <div class="directory-container">
+                <h3 class="directory-title">Full Project Directory</h3>
+                <p class="directory-subtitle">Search and filter through the verified completed public repositories.</p>
+                
+                <div class="directory-controls">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="project-search" placeholder="Search projects by name, technology, or keywords...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Repos</button>
+                        <button class="filter-btn" data-filter="python">Python</button>
+                        <button class="filter-btn" data-filter="web">Web / React</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid" id="projects-directory">
+                    <!-- Dynamically rendered by app.js -->
+                </div>
+                
+                <div class="no-results" id="no-results">
+                    <i class="fa-regular fa-folder-open"></i>
+                    <p>No matching completed repositories found.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact & Terminal Section -->
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-grid">
-                <div class="contact-info-panel">
-                    <h3>Get In Touch</h3>
-                    <p>
-                        I am currently seeking software engineering internship opportunities for Summer/Fall semesters. If you are a recruiter or want to collaborate on a project, drop a message!
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>San Antonio, TX</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>+(210)-850-7255</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>Colby.D.Christy@gmail.com</span>
-                        </div>
+            <h2 class="section-title"><span class="section-number">05.</span> Get In Touch</h2>
+            <div class="terminal-container">
+                <!-- Terminal Header -->
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="term-btn close"></span>
+                        <span class="term-btn minimize"></span>
+                        <span class="term-btn maximize"></span>
                     </div>
+                    <div class="terminal-title mono-text">guest@colbysid.com: ~</div>
                 </div>
-                <div class="contact-form-panel">
-                    <form action="https://formspree.io/f/xzblonqz" method="POST" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <!-- Terminal Body -->
+                <div class="terminal-body">
+                    <div class="terminal-line mono-text">
+                        <span class="term-prompt">$</span> cat contact_info.json
+                    </div>
+                    <div class="terminal-output mono-text">
+<pre>{
+  "name": "Colby Christy",
+  "location": "San Antonio, TX",
+  "email": "Colby.D.Christy@gmail.com",
+  "seeking": "Summer/Fall 2026 Software Internships"
+}</pre>
+                    </div>
+                    
+                    <div class="terminal-line mono-text">
+                        <span class="term-prompt">$</span> send-message --interactive
+                    </div>
+                    
+                    <form action="https://formspree.io/f/xzblonqz" method="POST" class="terminal-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="mono-text">name:</label>
+                                <input type="text" id="name" name="name" required placeholder="Guest User">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="mono-text">email:</label>
+                                <input type="email" id="email" name="_replyto" required placeholder="guest@example.com">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="_replyto" placeholder="Your Email Address" required>
+                            <label for="message" class="mono-text">message:</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Your Message..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <button type="submit" class="btn btn-terminal mono-text">
+                            <i class="fa-solid fa-paper-plane"></i> execute --send
+                        </button>
                     </form>
                 </div>
             </div>
@@ -296,10 +372,14 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-container">
-            <p>&copy; 2026 Colby Christy. All rights reserved.</p>
+            <div class="footer-left">
+                <p class="mono-text">Designed & Built by Colby Christy</p>
+                <p class="footer-stack-info">Built with Vanilla HTML5, CSS3, and JavaScript. Hosted on GitHub Pages.</p>
+            </div>
             <div class="footer-links">
-                <a href="https://github.com/ColbyJacks" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com/in/colby-christy-3ab0821a2" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/ColbyJacks" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/colby-christy-3ab0821a2" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:Colby.D.Christy@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </footer>
