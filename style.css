@@ -945,3 +945,190 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Featured Project Actions & Demo Drawers */
+.project-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.btn-demo-toggle {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-family: var(--font-global);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all var(--transition-speed);
+}
+
+.btn-demo-toggle:hover, .btn-demo-toggle.active {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: rgba(16, 185, 129, 0.05);
+}
+
+.project-demo-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin-top 0.4s ease;
+    margin-top: 0;
+}
+
+.project-demo-drawer.active {
+    max-height: 500px;
+    margin-top: 20px;
+}
+
+/* Simulated Console styling */
+.demo-console {
+    background-color: #0b0f19;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.console-header {
+    background-color: #121826;
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.console-header .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.console-header .dot.close { background-color: #ff5f56; }
+.console-header .dot.minimize { background-color: #ffbd2e; }
+.console-header .dot.maximize { background-color: #27c93f; }
+
+.console-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+.console-body {
+    padding: 16px;
+    font-size: 0.8rem;
+    color: #f8fafc;
+    text-align: left;
+}
+
+.console-line {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.console-line:last-child {
+    margin-bottom: 0;
+}
+
+.console-line .prompt {
+    color: var(--primary);
+}
+
+/* TTS Speech Demo Tool styling */
+.demo-tts-tool {
+    background-color: #121826;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.tts-input-row {
+    display: flex;
+    gap: 10px;
+}
+
+#tts-voice-text {
+    flex-grow: 1;
+    background-color: #0b0f19;
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: var(--font-global);
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color var(--transition-speed);
+}
+
+#tts-voice-text:focus {
+    border-color: var(--primary);
+}
+
+.tts-waveform-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tts-waveform {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 20px;
+}
+
+.tts-waveform .bar {
+    width: 3px;
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    transition: height 0.15s ease, background-color 0.15s ease;
+}
+
+.tts-waveform.playing .bar {
+    background-color: var(--primary);
+    animation: wave-animation 0.8s ease infinite alternate;
+}
+
+.tts-waveform.playing .bar:nth-child(2) { animation-delay: 0.1s; }
+.tts-waveform.playing .bar:nth-child(3) { animation-delay: 0.2s; }
+.tts-waveform.playing .bar:nth-child(4) { animation-delay: 0.3s; }
+.tts-waveform.playing .bar:nth-child(5) { animation-delay: 0.4s; }
+.tts-waveform.playing .bar:nth-child(6) { animation-delay: 0.15s; }
+.tts-waveform.playing .bar:nth-child(7) { animation-delay: 0.25s; }
+.tts-waveform.playing .bar:nth-child(8) { animation-delay: 0.35s; }
+.tts-waveform.playing .bar:nth-child(9) { animation-delay: 0.05s; }
+.tts-waveform.playing .bar:nth-child(10) { animation-delay: 0.45s; }
+
+@keyframes wave-animation {
+    0% { height: 4px; }
+    100% { height: 18px; }
+}
+
+.waveform-status {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+}
+
+.waveform-status.playing {
+    color: var(--primary);
+}

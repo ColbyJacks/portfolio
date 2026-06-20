@@ -272,3 +272,80 @@ if (canvas) {
     }
     animate();
 }
+
+// Project Demo Toggle Accordion
+const demoToggleBtns = document.querySelectorAll(".btn-demo-toggle");
+demoToggleBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+        const targetDrawer = document.getElementById(targetId);
+        
+        if (targetDrawer) {
+            // Close all other drawers
+            document.querySelectorAll(".project-demo-drawer").forEach(drawer => {
+                if (drawer !== targetDrawer && drawer.classList.contains("active")) {
+                    drawer.classList.remove("active");
+                    const matchingBtn = document.querySelector(`[data-target="${drawer.id}"]`);
+                    if (matchingBtn) matchingBtn.classList.remove("active");
+                }
+            });
+            
+            // Toggle target drawer
+            targetDrawer.classList.toggle("active");
+            btn.classList.toggle("active");
+        }
+    });
+});
+
+// Web Speech API Voice synthesis demo (Clone-TTS card)
+const btnSpeak = document.getElementById("btn-tts-speak");
+const ttsInput = document.getElementById("tts-voice-text");
+const ttsWave = document.getElementById("tts-wave");
+const waveStatus = document.getElementById("waveform-status");
+
+if (btnSpeak && ttsInput && ttsWave && waveStatus) {
+    let isSpeaking = false;
+    
+    btnSpeak.addEventListener("click", () => {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            ttsWave.classList.remove("playing");
+            waveStatus.textContent = "Ready";
+            waveStatus.classList.remove("playing");
+            btnSpeak.innerHTML = '<i class="fa-solid fa-volume-high"></i> Synthesize';
+            isSpeaking = false;
+            return;
+        }
+        
+        const text = ttsInput.value.trim();
+        if (text === "") return;
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        
+        utterance.onstart = () => {
+            isSpeaking = true;
+            ttsWave.classList.add("playing");
+            waveStatus.textContent = "Speaking...";
+            waveStatus.classList.add("playing");
+            btnSpeak.innerHTML = '<i class="fa-solid fa-square-stop"></i> Stop';
+        };
+        
+        utterance.onend = () => {
+            isSpeaking = false;
+            ttsWave.classList.remove("playing");
+            waveStatus.textContent = "Ready";
+            waveStatus.classList.remove("playing");
+            btnSpeak.innerHTML = '<i class="fa-solid fa-volume-high"></i> Synthesize';
+        };
+        
+        utterance.onerror = () => {
+            isSpeaking = false;
+            ttsWave.classList.remove("playing");
+            waveStatus.textContent = "Error";
+            waveStatus.classList.remove("playing");
+            btnSpeak.innerHTML = '<i class="fa-solid fa-volume-high"></i> Synthesize';
+        };
+        
+        window.speechSynthesis.speak(utterance);
+    });
+}
