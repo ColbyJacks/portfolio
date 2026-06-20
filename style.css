@@ -210,7 +210,9 @@ h1, h2, h3, h4 {
 }
 
 .hero-content {
-    max-width: 680px;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .hero-subtitle {
@@ -241,11 +243,13 @@ h1, h2, h3, h4 {
     display: flex;
     gap: 15px;
     margin-bottom: 35px;
+    justify-content: center;
 }
 
 .hero-socials {
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .hero-socials a {
