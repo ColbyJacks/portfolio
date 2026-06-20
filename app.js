@@ -206,7 +206,7 @@ if (canvas) {
             if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
         }
         draw() {
-            ctx.fillStyle = `rgba(0, 242, 254, ${this.opacity})`;
+            ctx.fillStyle = `rgba(16, 185, 129, ${this.opacity})`;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -245,7 +245,7 @@ if (canvas) {
             particles.forEach(p2 => {
                 const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
                 if (dist < 90) {
-                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.08 * (1 - dist/90)})`;
+                    ctx.strokeStyle = `rgba(20, 184, 166, ${0.08 * (1 - dist/90)})`;
                     ctx.lineWidth = 0.5;
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
@@ -259,7 +259,7 @@ if (canvas) {
                 const distToMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
                 if (distToMouse < 140) {
                     const force = (140 - distToMouse) / 140;
-                    ctx.strokeStyle = `rgba(0, 242, 254, ${0.12 * force})`;
+                    ctx.strokeStyle = `rgba(16, 185, 129, ${0.12 * force})`;
                     ctx.lineWidth = 0.5;
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);

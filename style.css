@@ -1,21 +1,21 @@
 /* Clean Developer Portfolio Design System */
 
 :root {
-    --bg-dark: #070a13;
-    --bg-card: rgba(20, 27, 47, 0.65);
-    --bg-navbar: rgba(7, 10, 19, 0.75);
+    --bg-dark: #0f1013;
+    --bg-card: rgba(24, 25, 29, 0.65);
+    --bg-navbar: rgba(15, 16, 19, 0.75);
     
-    --primary: #6366f1; /* Indigo */
-    --primary-glow: rgba(99, 102, 241, 0.35);
-    --secondary: #10b981; /* Emerald */
-    --secondary-glow: rgba(16, 185, 129, 0.2);
+    --primary: #10b981; /* Emerald / Soft Green */
+    --primary-glow: rgba(16, 185, 129, 0.35);
+    --secondary: #14b8a6; /* Sea Green / Teal */
+    --secondary-glow: rgba(20, 184, 166, 0.2);
     
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --text-header: #ffffff;
     
     --border-color: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(99, 102, 241, 0.4);
+    --border-hover: rgba(16, 185, 129, 0.4);
     
     --font-global: 'Outfit', sans-serif;
     
@@ -196,7 +196,7 @@ h1, h2, h3, h4 {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 70%);
     z-index: 1;
     pointer-events: none;
 }
@@ -855,7 +855,7 @@ footer {
 }
 
 .term-prompt {
-    color: #00f2fe; /* Light cyan prompt */
+    color: var(--primary); /* Light green prompt */
     margin-right: 8px;
 }
 
@@ -914,13 +914,13 @@ footer {
 }
 
 .terminal-form input:focus, .terminal-form textarea:focus {
-    border-color: #00f2fe;
+    border-color: var(--primary);
 }
 
 .btn-terminal {
     background-color: transparent;
-    color: #00f2fe;
-    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: var(--primary);
+    border: 1px solid rgba(16, 185, 129, 0.35);
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     padding: 10px 20px;
     margin-top: 10px;
@@ -935,8 +935,8 @@ footer {
 }
 
 .btn-terminal:hover {
-    background-color: rgba(0, 242, 254, 0.1);
-    border-color: #00f2fe;
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: var(--primary);
     color: #ffffff;
 }
 
